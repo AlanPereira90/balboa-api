@@ -12,7 +12,7 @@ const connection = new DataSource({
   password: POSTGRES.PASSWORD,
   database: POSTGRES.DATABASE,
   migrations: ['migrations/**/*.ts'],
-  entities: ['src/domain/Balboa/entities/**/*.ts'],
+  entities: ['src/domain/workouts/entities/**/*.ts'],
   logging: ENV === 'development',
 });
 
