@@ -1,0 +1,113 @@
+info:
+  version: 1.0.0
+  title: Balboa API
+  description: Balboa API definitions
+paths:
+  /status:
+    get:
+      responses:
+        '200':
+          description: success
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: '0'
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: '15'
+            etag:
+              schema:
+                type: string
+              example: W/"f-NQVRlQfKHCoInEbhALgECMonhCE"
+            x-response-time:
+              schema:
+                type: string
+              example: 2.577ms
+            date:
+              schema:
+                type: string
+              example: Tue, 07 Feb 2023 20:48:59 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+      tags:
+        - Readiness
+servers:
+  - url: http://localhost:7000
+    description: Balboa API Server
+openapi: 3.0.3

@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  api:
+    image: 'balboa-api'
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: balboa-api
+    ports:
+      - 7000:7000
+    env_file: .env
+    volumes:
+      - ./src:/api/src
+    networks:
+      - np-network
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:14.1-alpine
+    env_file: .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres:/var/lib/postgresql
+    networks:
+      - np-network
+volumes:
+  postgres:
+networks:
+  np-network:
