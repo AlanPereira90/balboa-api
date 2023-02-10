@@ -4,7 +4,7 @@ import { DataSource } from 'typeorm';
 import { ENV, POSTGRES } from '../../domain/common/utils/environment';
 import { logger } from '../logger/logger';
 
-const connection = new DataSource({
+export const connection = new DataSource({
   type: 'postgres',
   host: POSTGRES.HOST,
   port: POSTGRES.PORT,
@@ -12,7 +12,7 @@ const connection = new DataSource({
   password: POSTGRES.PASSWORD,
   database: POSTGRES.DATABASE,
   migrations: ['migrations/**/*.ts'],
-  entities: ['src/domain/workouts/entities/**/*.ts'],
+  entities: ['src/domain/workout/entities/**/*.ts'],
   logging: ENV === 'development',
 });
 
