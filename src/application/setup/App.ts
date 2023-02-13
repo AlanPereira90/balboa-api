@@ -36,7 +36,7 @@ export class App {
   listen(): void {
     this.app.listen(CONFIG.PORT, () => {
       logger.info(
-        `[INFO]: Server is running. Listening on port ${CONFIG.PORT}\nDocumentation available on SERVER_URL:${CONFIG.PORT}/api-docs`,
+        `Server is running. Listening on port ${CONFIG.PORT}\nDocumentation available on SERVER_URL:${CONFIG.PORT}/api-docs`,
       );
       logger.debug('Press CTRL+C to exit');
     });

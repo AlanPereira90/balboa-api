@@ -6,7 +6,7 @@ paths:
   /status:
     get:
       responses:
-        '200':
+        "200":
           description: success
           content:
             application/json; charset=utf-8:
@@ -76,7 +76,7 @@ paths:
             x-xss-protection:
               schema:
                 type: string
-              example: '0'
+              example: "0"
             vary:
               schema:
                 type: string
@@ -88,7 +88,7 @@ paths:
             content-length:
               schema:
                 type: string
-              example: '15'
+              example: "15"
             etag:
               schema:
                 type: string
@@ -96,11 +96,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 2.577ms
+              example: 0.388ms
             date:
               schema:
                 type: string
-              example: Tue, 07 Feb 2023 20:48:59 GMT
+              example: Mon, 13 Feb 2023 17:34:24 GMT
             connection:
               schema:
                 type: string

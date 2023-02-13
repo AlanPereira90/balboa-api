@@ -19,7 +19,7 @@ export const connection = new DataSource({
 export async function connectDB() {
   const db = await connection.initialize();
 
-  logger.info('[INFO]: PostgreSQL connection stablished');
+  logger.info('PostgreSQL connection stablished');
 
   if (ENV !== 'test') {
     container.registerInstance('PostgresConnection', db);

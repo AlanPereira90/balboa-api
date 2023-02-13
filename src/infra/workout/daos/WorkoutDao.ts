@@ -1,4 +1,4 @@
-import WorkoutsEntity from 'src/domain/workout/entities/WorkoutEntity';
+import WorkoutEntity from 'src/domain/workout/entities/WorkoutEntity';
 import { container, Lifecycle, registry, scoped } from 'tsyringe';
 import { DataSource } from 'typeorm';
 
@@ -6,7 +6,7 @@ import { DataSource } from 'typeorm';
 @registry([
   {
     token: 'WorkoutDao',
-    useFactory: () => container.resolve<DataSource>('PostgresConnection').getRepository(WorkoutsEntity),
+    useFactory: () => container.resolve<DataSource>('PostgresConnection').getRepository(WorkoutEntity),
   },
 ])
 export default class WorkoutDao {}

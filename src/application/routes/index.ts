@@ -31,7 +31,7 @@ function getHandler(controller: IController): RequestHandler[] {
 }
 
 for (const controller of getControllers()) {
-  logger.info(`[INFO]: Route ${controller.verb.toUpperCase()} ${controller.path} enabled`);
+  logger.info(`Route ${controller.verb.toUpperCase()} ${controller.path} enabled`);
   router[controller.verb](controller.path, getHandler(controller));
 }
 

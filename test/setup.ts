@@ -13,7 +13,7 @@ container.registerInstance('PostgresConnection', {
   getRepository: stub().returns(new Repository()),
 } as unknown as DataSource);
 
-//import '../src/domain/config/di';
+import '../src/domain/config/di';
 import '../src/application/config/di';
 
 chai.use(sinonChai);

@@ -1,7 +1,8 @@
 import { Column, Entity } from 'typeorm';
+import { WorkoutDetail } from '../types/workout';
 
 @Entity({ name: 'workouts' })
-export default class WorkoutsEntity {
+export default class WorkoutEntity {
   @Column()
   id!: string;
 
@@ -9,7 +10,7 @@ export default class WorkoutsEntity {
   name!: string;
 
   @Column()
-  details!: Array<Record<string, unknown>>;
+  details!: Array<WorkoutDetail>;
 
   @Column({ name: 'created_at' })
   createdAt!: Date;
