@@ -96,11 +96,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 0.388ms
+              example: 0.477ms
             date:
               schema:
                 type: string
-              example: Mon, 13 Feb 2023 17:34:24 GMT
+              example: Mon, 13 Feb 2023 21:52:48 GMT
             connection:
               schema:
                 type: string

@@ -10,29 +10,27 @@ function getControllers(): IController[] {
   return container.resolveAll<IController>('Controller');
 }
 
-function getHandler(controller: IController): RequestHandler[] {
-  const handler: RequestHandler = async (req, res, next) => {
+function getHandlerExecutionPlan(handler: RequestHandler): RequestHandler {
+  return async (req, res, next) => {
     try {
-      await controller.handler(req, res, next);
+      await handler(req, res, next);
     } catch (err) {
       next(err);
     }
   };
+}
 
-  const requestValidator: RequestHandler = async (req, res, next) => {
-    if (controller.requestValidator) {
-      await controller.requestValidator(req, res, next);
-    } else {
-      next();
-    }
-  };
+function getHandlers(controller: IController): RequestHandler[] {
+  const middlewares = controller.middlewares.map((middleware) => getHandlerExecutionPlan(middleware));
 
-  return [requestValidator, handler];
+  const main = getHandlerExecutionPlan(controller.handler);
+
+  return [...middlewares, main];
 }
 
 for (const controller of getControllers()) {
   logger.info(`Route ${controller.verb.toUpperCase()} ${controller.path} enabled`);
-  router[controller.verb](controller.path, getHandler(controller));
+  router[controller.verb](controller.path, getHandlers(controller));
 }
 
 export default router;

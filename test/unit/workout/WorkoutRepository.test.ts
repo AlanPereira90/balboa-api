@@ -25,13 +25,13 @@ describe('WorkoutRepository', () => {
       const workout = WorkoutEntityBuilder.build();
       const message = faker.lorem.sentence();
 
-      const daoSaveStub = stub().rejects(new Error(message));
-      const instance = WorkoutRepositoryBuilder.build({ save: daoSaveStub });
+      const save = stub().rejects(new Error(message));
+      const instance = WorkoutRepositoryBuilder.build({ save });
 
       const promise = instance.create(workout);
 
       await expect(promise).to.be.eventually.rejected.with.property('message', message);
-      expect(daoSaveStub).to.be.calledOnceWith(workout);
+      expect(save).to.be.calledOnceWith(workout);
     });
   });
 });

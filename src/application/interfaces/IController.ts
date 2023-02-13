@@ -21,5 +21,5 @@ export interface IController {
   verb: HttpVerb;
   path: string;
   handler: CustomRequestHandler;
-  requestValidator?: CustomRequestHandler;
+  middlewares: Array<RequestHandler>;
 }
