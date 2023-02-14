@@ -12,10 +12,12 @@ export default class WorkoutService implements IWorkoutService {
   constructor(@inject('WorkoutRepository') private readonly _repository: IworkoutRepository) {}
 
   async createWorkout(name: string, details: WorkoutDetail[]): Promise<string> {
+    const detailsWithId = details.map((detail) => ({ ...detail, id: randomUUID() }));
+
     const workout: WorkoutEntity = {
       id: randomUUID(),
       name,
-      details,
+      details: detailsWithId,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
