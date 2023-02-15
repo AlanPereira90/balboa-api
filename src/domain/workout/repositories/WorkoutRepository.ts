@@ -4,11 +4,11 @@ import ResponseError from '../../common/utils/ResponseError';
 
 import { IWorkoutDao } from '../daos/IWorkoutDao';
 import WorkoutEntity from '../entities/WorkoutEntity';
-import { IworkoutRepository } from './interfaces/IWorkoutRepository';
+import { IWorkoutRepository } from './interfaces/IWorkoutRepository';
 
 @scoped(Lifecycle.ResolutionScoped)
 @registry([{ token: 'WorkoutRepository', useClass: WorkoutRepository }])
-export default class WorkoutRepository implements IworkoutRepository {
+export default class WorkoutRepository implements IWorkoutRepository {
   constructor(@inject('WorkoutDao') private readonly _dao: IWorkoutDao) {}
 
   async create(workout: WorkoutEntity): Promise<string> {

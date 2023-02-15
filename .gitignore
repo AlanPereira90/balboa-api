@@ -158,7 +158,6 @@ dist
 .vscode-test
 
 ### vscode ###
-.vscode/*
 *.code-workspace
 
 ### jetbrains IDE ###

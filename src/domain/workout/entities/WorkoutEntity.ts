@@ -1,15 +1,15 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 import { WorkoutDetail } from '../types/workout';
 
 @Entity({ name: 'workouts' })
 export default class WorkoutEntity {
-  @Column()
+  @PrimaryColumn()
   id!: string;
 
   @Column()
   name!: string;
 
-  @Column()
+  @Column({ type: 'jsonb', array: false, default: "'[]'", nullable: false })
   details!: Array<WorkoutDetail>;
 
   @Column({ name: 'created_at' })

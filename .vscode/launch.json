@@ -1,0 +1,52 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run application",
+      "command": "docker compose up",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Run current .ts file",
+      "command": "yarn ts-node-dev -r dotenv/config ${file} --respawn",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Run current .test.ts file as integration test",
+      "command": "yarn vitest run --dir tests/integration ${relativeFile}",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "test",
+        "TEST_TYPE": "INTEGRATION"
+      }
+    },
+    {
+      "name": "Run current .test.ts file as unit test",
+      "command": "yarn vitest run --dir tests/unit ${relativeFile}",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "NODE_ENV": "test",
+        "TEST_TYPE": "UNIT"
+      }
+    },
+    {
+      "name": "Run current file as load test",
+      "command": "yarn test:load --file ${fileBasename}",
+      "request": "launch",
+      "type": "node-terminal"
+    }
+  ]
+}

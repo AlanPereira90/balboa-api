@@ -18,6 +18,7 @@ ARG PORT_DEBUGGER=9229
 EXPOSE $PORT_DEBUGGER
 
 COPY ./src ./src
+COPY migrations ./migrations
 COPY doc ./doc
 
 ENV NODE_ENV development

@@ -1,6 +1,6 @@
-import WorkoutEntity from 'src/domain/workout/entities/WorkoutEntity';
 import { container, Lifecycle, registry, scoped } from 'tsyringe';
 import { DataSource } from 'typeorm';
+import WorkoutEntity from '../../../domain/workout/entities/WorkoutEntity';
 
 @scoped(Lifecycle.ResolutionScoped)
 @registry([

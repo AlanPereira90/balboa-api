@@ -20,9 +20,9 @@ export const CONFIG = {
 };
 
 export const POSTGRES = {
-  USER_NAME: process.env.POSTGRES_USER_NAME || requiredEnvVar('POSTGRES_USER_NAME'),
+  USER_NAME: process.env.POSTGRES_USER || requiredEnvVar('POSTGRES_USER'),
   PASSWORD: process.env.POSTGRES_PASSWORD || requiredEnvVar('POSTGRES_PASSWORD'),
   HOST: process.env.POSTGRES_HOST || requiredEnvVar('POSTGRES_HOST'),
   PORT: Number(process.env.POSTGRES_PORT) || 5432,
-  DATABASE: process.env.POSTGRES_DATABASE || requiredEnvVar('POSTGRES_DATABASE'),
+  DATABASE: process.env.POSTGRES_DB || requiredEnvVar('POSTGRES_DB'),
 };

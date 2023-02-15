@@ -1,8 +1,8 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'workout_history' })
 export default class WorkoutHistory {
-  @Column()
+  @PrimaryColumn()
   id!: string;
 
   @Column({ name: 'workout_id' })

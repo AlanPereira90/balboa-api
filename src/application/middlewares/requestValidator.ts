@@ -7,7 +7,7 @@ type RequestType = 'params' | 'body' | 'query';
 export const requestValidator =
   (schema: ObjectSchema, type: RequestType = 'body') =>
   (request: Request<any, any, any, any>, _: Response, next: NextFunction) => {
-    const result = schema.validate(request[type]);
+    const result = schema.validate(request[type], { abortEarly: false });
 
     if (result.error) {
       throw new ResponseError(BAD_REQUEST, result.error.message, 'SCHEMA_VALIDATION_ERROR');

@@ -24,14 +24,6 @@ export class CreateTableWorkouts1676064313891 implements MigrationInterface {
             isUnique: true,
           },
           {
-            name: 'data',
-            type: 'jsonb',
-            isPrimary: false,
-            isGenerated: false,
-            isNullable: false,
-            isUnique: true,
-          },
-          {
             name: 'details',
             type: 'jsonb',
             isPrimary: false,

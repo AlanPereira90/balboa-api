@@ -1,5 +1,5 @@
 import WorkoutEntity from '../../entities/WorkoutEntity';
 
-export interface IworkoutRepository {
+export interface IWorkoutRepository {
   create(workout: WorkoutEntity): Promise<string>;
 }
