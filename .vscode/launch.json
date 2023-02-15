@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "Run application",
-      "command": "docker compose up",
+      "command": "yarn dev",
       "request": "launch",
       "type": "node-terminal",
       "env": {
