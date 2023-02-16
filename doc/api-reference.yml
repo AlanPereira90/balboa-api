@@ -96,17 +96,665 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 2.576ms
+              example: 3.152ms
             date:
               schema:
                 type: string
-              example: Wed, 15 Feb 2023 00:04:48 GMT
+              example: Thu, 16 Feb 2023 20:52:34 GMT
             connection:
               schema:
                 type: string
               example: close
       tags:
         - Readiness
+  /workouts:
+    post:
+      responses:
+        "201":
+          description: success
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: cb873147-1a18-44dc-90b7-abcf20f054e6
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "45"
+            etag:
+              schema:
+                type: string
+              example: W/"2d-WpCS3sBpnQFH1L+pzfn/b67AUyk"
+            x-response-time:
+              schema:
+                type: string
+              example: 11.426ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:34 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+        "400":
+          description: payload error
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: '"name" must be a string'
+                  code:
+                    type: string
+                    example: SCHEMA_VALIDATION_ERROR
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "72"
+            etag:
+              schema:
+                type: string
+              example: W/"48-btAQ8EYa1yN9Gg9TGkyGeSZG7CM"
+            x-response-time:
+              schema:
+                type: string
+              example: 3.786ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:34 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+        "500":
+          description: internal error
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Voluptate aut blanditiis illo explicabo quis quaerat aspernatur
+                      numquam.
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "86"
+            etag:
+              schema:
+                type: string
+              example: W/"56-PmRJfc7X0qIeNR3sxRbmxuRGVkY"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.518ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:35 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+      tags:
+        - Workouts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: repellendus
+                details:
+                  type: array
+                  items:
+                    type: object
+                  example:
+                    - name: unde
+                      order: 6
+                      items:
+                        - deleniti
+                        - expedita
+    put:
+      responses:
+        "200":
+          description: success
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  affectedRows:
+                    type: number
+                    example: 1
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "18"
+            etag:
+              schema:
+                type: string
+              example: W/"12-JECp4Yef0u2kzRg2X2rS8BnZ2xs"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.316ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:35 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+        "400":
+          description: payload error
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: '"name" must be a string'
+                  code:
+                    type: string
+                    example: SCHEMA_VALIDATION_ERROR
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "72"
+            etag:
+              schema:
+                type: string
+              example: W/"48-btAQ8EYa1yN9Gg9TGkyGeSZG7CM"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.299ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:35 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+        "500":
+          description: internal error
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Tempore magnam repellat aliquam tempore nostrum sed aut.
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "70"
+            etag:
+              schema:
+                type: string
+              example: W/"46-mNhLBU4dRsLxKD+54VjvY9aBA4I"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.116ms
+            date:
+              schema:
+                type: string
+              example: Thu, 16 Feb 2023 20:52:35 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+      tags:
+        - Workouts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: veniam
+                details:
+                  type: array
+                  items:
+                    type: object
+                  example:
+                    - name: enim
+                      order: 5
+                      items:
+                        - harum
+                        - eaque
 servers:
   - url: http://localhost:7000
     description: Balboa API Server
