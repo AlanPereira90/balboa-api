@@ -12,7 +12,12 @@ export default class WorkoutService implements IWorkoutService {
   constructor(@inject('WorkoutRepository') private readonly _repository: IWorkoutRepository) {}
 
   updateWorkout(id: string, fields: Partial<Omit<WorkoutEntity, 'id'>>): Promise<UpdateResult> {
-    return this._repository.updateById(id, fields);
+    const fieldsWithUpdatedAt = {
+      ...fields,
+      updatedAt: new Date(),
+    };
+
+    return this._repository.updateById(id, fieldsWithUpdatedAt);
   }
 
   async createWorkout(name: string, details: Array<Omit<WorkoutDetail, 'id'>>): Promise<string> {
