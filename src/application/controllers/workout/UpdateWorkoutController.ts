@@ -31,6 +31,7 @@ export default class UpdateWorkoutController implements IController {
     details: Joi.array()
       .items(
         Joi.object<WorkoutDetail>({
+          id: Joi.string().uuid().required(),
           name: Joi.string().required(),
           order: Joi.number().required(),
           items: Joi.array().items(Joi.string()).min(1).required(),

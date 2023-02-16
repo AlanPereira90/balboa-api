@@ -96,11 +96,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 3.152ms
+              example: 0.429ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:34 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -119,7 +119,7 @@ paths:
                 properties:
                   id:
                     type: string
-                    example: cb873147-1a18-44dc-90b7-abcf20f054e6
+                    example: 4eadd113-9a0b-480c-b60d-521e72112c1d
           headers:
             content-security-policy:
               schema:
@@ -196,15 +196,15 @@ paths:
             etag:
               schema:
                 type: string
-              example: W/"2d-WpCS3sBpnQFH1L+pzfn/b67AUyk"
+              example: W/"2d-/nZxThCw7ErYPmUfp4QgcpzRBPg"
             x-response-time:
               schema:
                 type: string
-              example: 11.426ms
+              example: 1.341ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:34 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -302,11 +302,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 3.786ms
+              example: 2.800ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:34 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -320,8 +320,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Voluptate aut blanditiis illo explicabo quis quaerat aspernatur
-                      numquam.
+                    example: Officiis culpa molestiae qui qui.
           headers:
             content-security-policy:
               schema:
@@ -394,19 +393,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "86"
+              example: "47"
             etag:
               schema:
                 type: string
-              example: W/"56-PmRJfc7X0qIeNR3sxRbmxuRGVkY"
+              example: W/"2f-NYRkQn5EwNfOyyMZvisROy6l8T4"
             x-response-time:
               schema:
                 type: string
-              example: 1.518ms
+              example: 1.661ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:35 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -421,17 +420,17 @@ paths:
               properties:
                 name:
                   type: string
-                  example: repellendus
+                  example: est
                 details:
                   type: array
                   items:
                     type: object
                   example:
-                    - name: unde
-                      order: 6
+                    - name: sit
+                      order: 4
                       items:
-                        - deleniti
-                        - expedita
+                        - eius
+                        - omnis
     put:
       responses:
         "200":
@@ -524,11 +523,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 1.316ms
+              example: 1.863ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:35 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -626,11 +625,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 1.299ms
+              example: 0.816ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:35 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -644,7 +643,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Tempore magnam repellat aliquam tempore nostrum sed aut.
+                    example: Qui voluptatem sit est eum nam tempora dolor.
           headers:
             content-security-policy:
               schema:
@@ -717,19 +716,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "70"
+              example: "59"
             etag:
               schema:
                 type: string
-              example: W/"46-mNhLBU4dRsLxKD+54VjvY9aBA4I"
+              example: W/"3b-9dbnbkVdqNCGApgJFqi9yBYzlbw"
             x-response-time:
               schema:
                 type: string
-              example: 1.116ms
+              example: 1.679ms
             date:
               schema:
                 type: string
-              example: Thu, 16 Feb 2023 20:52:35 GMT
+              example: Thu, 16 Feb 2023 20:56:52 GMT
             connection:
               schema:
                 type: string
@@ -744,17 +743,18 @@ paths:
               properties:
                 name:
                   type: string
-                  example: veniam
+                  example: quibusdam
                 details:
                   type: array
                   items:
                     type: object
                   example:
-                    - name: enim
-                      order: 5
+                    - id: 1037c291-b752-4590-b535-99b7c0f869c7
+                      name: ipsum
+                      order: 6
                       items:
-                        - harum
-                        - eaque
+                        - ullam
+                        - dignissimos
 servers:
   - url: http://localhost:7000
     description: Balboa API Server

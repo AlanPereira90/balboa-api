@@ -33,6 +33,7 @@ describe('PUT /workouts/:id', () => {
       name: faker.lorem.word(),
       details: [
         {
+          id: faker.datatype.uuid(),
           name: faker.lorem.word(),
           order: faker.datatype.number({ min: 0, max: 10 }),
           items: [faker.lorem.word(), faker.lorem.word()],
@@ -65,6 +66,7 @@ describe('PUT /workouts/:id', () => {
       name: faker.datatype.number(),
       details: [
         {
+          id: faker.datatype.uuid(),
           name: faker.lorem.word(),
           order: faker.datatype.number({ min: 0, max: 10 }),
           items: [faker.lorem.word(), faker.lorem.word()],
@@ -90,6 +92,7 @@ describe('PUT /workouts/:id', () => {
       name: faker.lorem.word(),
       details: [
         {
+          id: faker.datatype.uuid(),
           name: faker.lorem.word(),
           order: faker.datatype.number({ min: 0, max: 10 }),
           items: [faker.lorem.word(), faker.lorem.word()],
