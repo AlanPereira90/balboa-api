@@ -3,6 +3,8 @@ import { expect } from 'chai';
 import { describe } from 'mocha';
 import { stub } from 'sinon';
 
+import { WorkoutErrorCodes } from '../../../src/domain/common/utils/error-codes';
+
 import WorkoutEntityBuilder from '../../helpers/workout/WorkoutEntityBuilder';
 import WorkoutServiceBuilder from '../../helpers/workout/WorkoutServiceBuilder';
 
@@ -58,6 +60,36 @@ describe('WorkoutService', () => {
 
       expect(result).to.be.deep.equal([]);
       expect(list).to.be.calledOnce;
+    });
+  });
+
+  describe('findOne', () => {
+    it('should return a workout successfully', async () => {
+      const id = faker.datatype.uuid();
+      const workout = WorkoutEntityBuilder.build({ id });
+
+      const findOne = stub().resolves(workout);
+
+      const instance = WorkoutServiceBuilder.build({ findOne });
+
+      const result = await instance.findOne(id);
+
+      expect(result).to.be.deep.equal(workout);
+      expect(findOne).to.be.calledWith(id);
+    });
+
+    it('should return error when workout not found', async () => {
+      const id = faker.datatype.uuid();
+
+      const findOne = stub().resolves(null);
+
+      const instance = WorkoutServiceBuilder.build({ findOne });
+
+      const promise = instance.findOne(id);
+
+      await expect(promise).to.be.eventually.rejected.with.property('message', 'workout not found');
+      await expect(promise).to.be.eventually.rejected.with.property('code', WorkoutErrorCodes.WorkoutNotFound);
+      expect(findOne).to.be.calledWith(id);
     });
   });
 });

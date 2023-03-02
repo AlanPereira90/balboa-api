@@ -1,4 +1,5 @@
 import { INTERNAL_SERVER_ERROR } from 'http-status';
+import { Nullable } from '../../../@types/utils';
 import { inject, Lifecycle, registry, scoped } from 'tsyringe';
 import ResponseError from '../../common/utils/ResponseError';
 
@@ -10,6 +11,16 @@ import { IWorkoutRepository } from './interfaces/IWorkoutRepository';
 @registry([{ token: 'WorkoutRepository', useClass: WorkoutRepository }])
 export default class WorkoutRepository implements IWorkoutRepository {
   constructor(@inject('WorkoutDao') private readonly _dao: IWorkoutDao) {}
+
+  async findOne(id: string): Promise<Nullable<WorkoutEntity>> {
+    try {
+      const result = await this._dao.findOneBy({ id });
+
+      return result;
+    } catch (err: any) {
+      throw new ResponseError(INTERNAL_SERVER_ERROR, err.message);
+    }
+  }
 
   async list(filter: Partial<Pick<WorkoutEntity, 'name'>> = {}): Promise<WorkoutEntity[]> {
     try {

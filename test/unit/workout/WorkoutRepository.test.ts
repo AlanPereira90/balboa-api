@@ -118,4 +118,46 @@ describe('WorkoutRepository', () => {
       expect(findBy).to.be.calledOnceWith({});
     });
   });
+
+  describe('findOne', () => {
+    it('should find a workout successfully', async () => {
+      const id = faker.datatype.uuid();
+      const workout = WorkoutEntityBuilder.build({ id });
+
+      const findOneBy = stub().resolves(workout);
+
+      const instalnce = WorkoutRepositoryBuilder.build({ findOneBy });
+
+      const result = await instalnce.findOne(id);
+
+      expect(result).to.be.deep.equal(workout);
+      expect(findOneBy).to.be.calledOnceWith({ id });
+    });
+
+    it('should return null when workout is not found', async () => {
+      const id = faker.datatype.uuid();
+
+      const findOneBy = stub().resolves(null);
+
+      const instalnce = WorkoutRepositoryBuilder.build({ findOneBy });
+
+      const result = await instalnce.findOne(id);
+
+      expect(result).to.be.null;
+      expect(findOneBy).to.be.calledOnceWith({ id });
+    });
+
+    it('should fail when db fails', async () => {
+      const id = faker.datatype.uuid();
+      const message = faker.lorem.sentence();
+
+      const findOneBy = stub().rejects(new Error(message));
+      const instance = WorkoutRepositoryBuilder.build({ findOneBy });
+
+      const promise = instance.findOne(id);
+
+      await expect(promise).to.be.eventually.rejected.with.property('message', message);
+      expect(findOneBy).to.be.calledOnceWith({ id });
+    });
+  });
 });
