@@ -6,7 +6,8 @@ export default class WorkoutServiceBuilder {
   public static build(repositoryMethods: Partial<IWorkoutRepository> = {}): WorkoutService {
     const create = stub();
     const updateById = stub();
+    const list = stub();
 
-    return new WorkoutService({ create, updateById, ...repositoryMethods });
+    return new WorkoutService({ create, updateById, list, ...repositoryMethods });
   }
 }

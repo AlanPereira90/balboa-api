@@ -67,4 +67,55 @@ describe('WorkoutRepository', () => {
       expect(update).to.be.calledOnceWith(filter, fields);
     });
   });
+
+  describe('list', () => {
+    it('should list workouts given no filters', async () => {
+      const workouts = [WorkoutEntityBuilder.build(), WorkoutEntityBuilder.build()];
+
+      const findBy = stub().resolves(workouts);
+      const instance = WorkoutRepositoryBuilder.build({ findBy });
+
+      const result = await instance.list();
+
+      expect(result).to.be.deep.equal(workouts);
+      expect(findBy).to.be.calledWith({});
+    });
+
+    it('should list workouts given filters', async () => {
+      const filters = { name: faker.lorem.word() };
+      const workouts = [WorkoutEntityBuilder.build(), WorkoutEntityBuilder.build()];
+
+      const findBy = stub().resolves(workouts);
+      const instance = WorkoutRepositoryBuilder.build({ findBy });
+
+      const result = await instance.list(filters);
+
+      expect(result).to.be.deep.equal(workouts);
+      expect(findBy).to.be.calledWith(filters);
+    });
+
+    it('should return empty array when dao returns empty', async () => {
+      const filters = { name: faker.lorem.word() };
+
+      const findBy = stub().resolves([]);
+      const instance = WorkoutRepositoryBuilder.build({ findBy });
+
+      const result = await instance.list(filters);
+
+      expect(result).to.be.deep.equal([]);
+      expect(findBy).to.be.calledWith(filters);
+    });
+
+    it('should fail when dao fails', async () => {
+      const message = faker.lorem.sentence();
+
+      const findBy = stub().rejects(new Error(message));
+      const instance = WorkoutRepositoryBuilder.build({ findBy });
+
+      const promise = instance.list();
+
+      await expect(promise).to.be.eventually.rejected.with.property('message', message);
+      expect(findBy).to.be.calledOnceWith({});
+    });
+  });
 });

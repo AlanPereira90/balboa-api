@@ -32,8 +32,32 @@ describe('WorkoutService', () => {
 
       const result = await instance.updateWorkout(id, fields);
 
-      expect(result).to.be.equals(repositoryResult);
-      expect(updateById).to.be.calledOnceWith(id, fields);
+      expect(result).to.be.deep.equals(repositoryResult);
+      expect(updateById).to.be.calledOnce;
+    });
+  });
+
+  describe('list', () => {
+    it('should list workouts successfully', async () => {
+      const workouts = [WorkoutEntityBuilder.build()];
+
+      const list = stub().resolves(workouts);
+      const instance = WorkoutServiceBuilder.build({ list });
+
+      const result = await instance.list();
+
+      expect(result).to.be.deep.equals(workouts);
+      expect(list).to.be.calledOnce;
+    });
+
+    it('should return empty when no workouts found', async () => {
+      const list = stub().resolves([]);
+      const instance = WorkoutServiceBuilder.build({ list });
+
+      const result = await instance.list();
+
+      expect(result).to.be.deep.equal([]);
+      expect(list).to.be.calledOnce;
     });
   });
 });

@@ -10,16 +10,6 @@ function getControllers(): IController[] {
   return container.resolveAll<IController>('Controller');
 }
 
-/*function getHandlerExecutionPlan(handler: RequestHandler): RequestHandler {
-  return async (req, res, next) => {
-    try {
-      await handler(req, res, next);
-    } catch (err) {
-      next(err);
-    }
-  };
-}*/
-
 function getHandlers(controller: IController): RequestHandler[] {
   const handler: RequestHandler = async (req, res, next) => {
     try {

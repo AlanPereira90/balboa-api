@@ -11,6 +11,10 @@ import { IWorkoutService, UpdateResult } from './interfaces/IWorkoutService';
 export default class WorkoutService implements IWorkoutService {
   constructor(@inject('WorkoutRepository') private readonly _repository: IWorkoutRepository) {}
 
+  list(): Promise<WorkoutEntity[]> {
+    return this._repository.list({});
+  }
+
   updateWorkout(id: string, fields: Partial<Omit<WorkoutEntity, 'id'>>): Promise<UpdateResult> {
     const fieldsWithUpdatedAt = {
       ...fields,

@@ -15,3 +15,4 @@ import '../domain/workout/services/WorkoutService';
 import '../application/controllers/infra/ReadinessController';
 import '../application/controllers/workout/CreateWorkoutController';
 import '../application/controllers/workout/UpdateWorkoutController';
+import '../application/controllers/workout/ListWorkoutController';

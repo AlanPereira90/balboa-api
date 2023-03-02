@@ -11,6 +11,16 @@ import { IWorkoutRepository } from './interfaces/IWorkoutRepository';
 export default class WorkoutRepository implements IWorkoutRepository {
   constructor(@inject('WorkoutDao') private readonly _dao: IWorkoutDao) {}
 
+  async list(filter: Partial<Pick<WorkoutEntity, 'name'>> = {}): Promise<WorkoutEntity[]> {
+    try {
+      const result = await this._dao.findBy(filter);
+
+      return result;
+    } catch (err: any) {
+      throw new ResponseError(INTERNAL_SERVER_ERROR, err.message);
+    }
+  }
+
   async updateById(id: string, fields: Partial<WorkoutEntity>): Promise<{ affectedRows: number }> {
     try {
       const result = await this._dao.update({ id }, fields);
