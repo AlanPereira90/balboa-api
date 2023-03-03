@@ -5,7 +5,7 @@ import { HttpVerb } from '../../../@types/http-verb';
 import { CustomRequest, CustomResponse, IController } from '../../interfaces/IController';
 
 interface ReadinessResponse {
-  status: boolean;
+  alive: boolean;
 }
 
 @scoped(Lifecycle.ResolutionScoped)
@@ -17,7 +17,7 @@ export default class ReadinessController implements IController {
 
   public handler(_req: CustomRequest, res: CustomResponse<ReadinessResponse>) {
     res.status(OK).send({
-      status: true,
+      alive: true,
     });
   }
 }

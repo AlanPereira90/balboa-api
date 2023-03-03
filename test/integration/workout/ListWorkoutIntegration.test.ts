@@ -55,11 +55,6 @@ describe('GET /workouts', () => {
     expect(res.body).to.be.an('object');
     expect(res.body).to.have.property('items').to.be.an('array').to.have.property('length', 0);
     expect(findBy).to.be.calledOnceWith({});
-
-    doc
-      .path('/workouts')
-      .verb('get', { tags: ['Workouts'] })
-      .fromSuperAgentResponse(res, 'success');
   });
 
   it('should return 500 INTERNAL_SERVER_ERROR when db fails', async () => {

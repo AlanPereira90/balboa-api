@@ -48,7 +48,7 @@ describe('GET /workouts/:id', () => {
     expect(findOneBy).to.be.calledOnceWith({ id });
 
     doc
-      .path('/workouts')
+      .path('/workouts/:id')
       .verb('get', { tags: ['Workouts'] })
       .fromSuperAgentResponse(res, 'success');
   });
@@ -67,7 +67,7 @@ describe('GET /workouts/:id', () => {
     expect(findOneBy).to.be.calledOnceWith({ id });
 
     doc
-      .path('/workouts')
+      .path('/workouts/:id')
       .verb('get', { tags: ['Workouts'] })
       .fromSuperAgentResponse(res, 'not found');
   });
@@ -86,7 +86,7 @@ describe('GET /workouts/:id', () => {
     expect(findOneBy).to.be.calledOnceWith({ id });
 
     doc
-      .path('/workouts')
+      .path('/workouts/:id')
       .verb('get', { tags: ['Workouts'] })
       .fromSuperAgentResponse(res, 'internal error');
   });

@@ -28,11 +28,11 @@ describe('GET /status', () => {
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res.body).to.be.an('object');
-        expect(res.body).to.have.property('status', true);
+        expect(res.body).to.have.property('alive', true);
 
         doc
           .path('/status')
-          .verb('get', { tags: ['Readiness'] })
+          .verb('get', { tags: ['Liveness'] })
           .fromSuperAgentResponse(res, 'success');
 
         done();
