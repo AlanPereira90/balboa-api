@@ -12,6 +12,16 @@ import { IWorkoutRepository } from './interfaces/IWorkoutRepository';
 export default class WorkoutRepository implements IWorkoutRepository {
   constructor(@inject('WorkoutDao') private readonly _dao: IWorkoutDao) {}
 
+  async remove(id: string): Promise<{ affectedRows: number }> {
+    try {
+      const result = await this._dao.delete({ id });
+
+      return { affectedRows: result.affected ?? 0 };
+    } catch (err: any) {
+      throw new ResponseError(INTERNAL_SERVER_ERROR, err.message);
+    }
+  }
+
   async findOne(id: string): Promise<Nullable<WorkoutEntity>> {
     try {
       const result = await this._dao.findOneBy({ id });

@@ -96,11 +96,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 2.493ms
+              example: 0.388ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -119,7 +119,7 @@ paths:
                 properties:
                   id:
                     type: string
-                    example: 75459927-7289-485a-9729-d268e131d97a
+                    example: e3fc6306-a99c-4d52-821a-bbfa615e0125
           headers:
             content-security-policy:
               schema:
@@ -196,15 +196,15 @@ paths:
             etag:
               schema:
                 type: string
-              example: W/"2d-H398b2+ryoa47JsBJQoAjhdDtzk"
+              example: W/"2d-H+4vC4sevCdcnzCjDfAcSGaec3k"
             x-response-time:
               schema:
                 type: string
-              example: 8.617ms
+              example: 2.416ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -302,11 +302,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 2.629ms
+              example: 1.590ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -320,7 +320,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Consequuntur molestias ad quia.
+                    example: Aliquam ipsam eligendi ut sed ea.
           headers:
             content-security-policy:
               schema:
@@ -393,19 +393,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "45"
+              example: "47"
             etag:
               schema:
                 type: string
-              example: W/"2d-urimDR4NwIvp/2y1b0pTnprWJiw"
+              example: W/"2f-Z5910d4FqpeF8mTL71+UbuRm8to"
             x-response-time:
               schema:
                 type: string
-              example: 1.123ms
+              example: 1.671ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -420,17 +420,17 @@ paths:
               properties:
                 name:
                   type: string
-                  example: laudantium
+                  example: quaerat
                 details:
                   type: array
                   items:
                     type: object
                   example:
-                    - name: rerum
-                      order: 0
+                    - name: nihil
+                      order: 6
                       items:
-                        - voluptatem
-                        - corporis
+                        - consequuntur
+                        - nostrum
     get:
       responses:
         "200":
@@ -445,11 +445,11 @@ paths:
                     items:
                       type: object
                     example:
-                      - id: 44110fa7-c4d6-4fa8-9224-cd98c31e9ee4
-                        name: excepturi
+                      - id: c05bb8ab-3545-40b1-99e1-c0e1c1e90874
+                        name: qui
                         qtyCycles: 0
-                      - id: b88b99ca-e1a8-45e6-88cd-30f3e3f0d25f
-                        name: tempore
+                      - id: f9992668-d7ea-46ee-a263-ca441eeeda4c
+                        name: vero
                         qtyCycles: 0
           headers:
             content-security-policy:
@@ -523,19 +523,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "167"
+              example: "158"
             etag:
               schema:
                 type: string
-              example: W/"a7-gTlNAf+Gq/nj5geBt+6ywHBzd+I"
+              example: W/"9e-q9z96xFlK7kSG3dspyzMrLnvh9o"
             x-response-time:
               schema:
                 type: string
-              example: 0.538ms
+              example: 1.287ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -549,7 +549,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Omnis numquam voluptate autem.
+                    example: Deleniti officiis id et magnam necessitatibus labore enim quaerat.
           headers:
             content-security-policy:
               schema:
@@ -622,19 +622,221 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "44"
+              example: "80"
             etag:
               schema:
                 type: string
-              example: W/"2c-d7BVINnkPZKRJUltivh0LIJO9UE"
+              example: W/"50-+qIJqWjR1Ya2OMXo9yuu/qDK+BI"
             x-response-time:
               schema:
                 type: string
-              example: 0.771ms
+              example: 2.798ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+      tags:
+        - Workouts
+    delete:
+      responses:
+        "200":
+          description: success
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  affectedRows:
+                    type: number
+                    example: 1
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "18"
+            etag:
+              schema:
+                type: string
+              example: W/"12-JECp4Yef0u2kzRg2X2rS8BnZ2xs"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.196ms
+            date:
+              schema:
+                type: string
+              example: Fri, 03 Mar 2023 16:47:33 GMT
+            connection:
+              schema:
+                type: string
+              example: close
+        "500":
+          description: internal error
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Voluptates quod ex minima dolores.
+          headers:
+            content-security-policy:
+              schema:
+                type: string
+              example: "default-src 'self';base-uri 'self';block-all-mixed-content;font-src
+                'self' https: data:;form-action 'self';frame-ancestors
+                'self';img-src 'self' data:;object-src 'none';script-src
+                'self';script-src-attr 'none';style-src 'self' https:
+                'unsafe-inline';upgrade-insecure-requests"
+            cross-origin-embedder-policy:
+              schema:
+                type: string
+              example: require-corp
+            cross-origin-opener-policy:
+              schema:
+                type: string
+              example: same-origin
+            cross-origin-resource-policy:
+              schema:
+                type: string
+              example: same-origin
+            x-dns-prefetch-control:
+              schema:
+                type: string
+              example: off
+            expect-ct:
+              schema:
+                type: string
+              example: max-age=0
+            x-frame-options:
+              schema:
+                type: string
+              example: SAMEORIGIN
+            strict-transport-security:
+              schema:
+                type: string
+              example: max-age=15552000; includeSubDomains
+            x-download-options:
+              schema:
+                type: string
+              example: noopen
+            x-content-type-options:
+              schema:
+                type: string
+              example: nosniff
+            origin-agent-cluster:
+              schema:
+                type: string
+              example: ?1
+            x-permitted-cross-domain-policies:
+              schema:
+                type: string
+              example: none
+            referrer-policy:
+              schema:
+                type: string
+              example: no-referrer
+            x-xss-protection:
+              schema:
+                type: string
+              example: "0"
+            vary:
+              schema:
+                type: string
+              example: Origin
+            content-type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            content-length:
+              schema:
+                type: string
+              example: "48"
+            etag:
+              schema:
+                type: string
+              example: W/"30-lM/1tRlHnNAm/a7VWzwFxI+b9VM"
+            x-response-time:
+              schema:
+                type: string
+              example: 1.274ms
+            date:
+              schema:
+                type: string
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -733,11 +935,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 1.608ms
+              example: 1.451ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -835,11 +1037,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 1.209ms
+              example: 1.644ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -853,7 +1055,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Est occaecati laboriosam tenetur consequatur.
+                    example: Molestias consectetur natus sit amet rem placeat aliquid pariatur.
           headers:
             content-security-policy:
               schema:
@@ -926,19 +1128,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "59"
+              example: "80"
             etag:
               schema:
                 type: string
-              example: W/"3b-plzkNBIpRQsWJkZOQd7D0wTSM3o"
+              example: W/"50-7Ixci3QJDX8Bfb9n4c3/idLBhhY"
             x-response-time:
               schema:
                 type: string
-              example: 1.172ms
+              example: 1.721ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -953,18 +1155,18 @@ paths:
               properties:
                 name:
                   type: string
-                  example: et
+                  example: maxime
                 details:
                   type: array
                   items:
                     type: object
                   example:
-                    - id: aac87d6d-f3d7-424a-8509-51018bdac858
-                      name: natus
-                      order: 7
+                    - id: 2e926235-8375-4612-8218-5a08f84b2d79
+                      name: dolor
+                      order: 9
                       items:
-                        - reiciendis
-                        - deserunt
+                        - dolor
+                        - veritatis
   /workouts/:id:
     get:
       responses:
@@ -977,10 +1179,10 @@ paths:
                 properties:
                   id:
                     type: string
-                    example: 6c901ebd-a417-4664-9226-764fedbfb4b4
+                    example: fab1c399-eceb-46ec-bcba-bb8bec1dc1c0
                   name:
                     type: string
-                    example: laborum
+                    example: quaerat
                   details:
                     type: array
                     items:
@@ -988,10 +1190,10 @@ paths:
                     example: []
                   createdAt:
                     type: string
-                    example: 2022-03-28T23:54:27.152Z
+                    example: 2022-07-18T15:47:56.666Z
                   updatedAt:
                     type: string
-                    example: 2022-09-26T03:34:54.677Z
+                    example: 2022-04-17T04:33:19.419Z
           headers:
             content-security-policy:
               schema:
@@ -1068,15 +1270,15 @@ paths:
             etag:
               schema:
                 type: string
-              example: W/"99-jzq07nHVfuv6EmNF1wK1d014fLQ"
+              example: W/"99-UDOEv0pmhEAUrY1HpVZw7pgp8/0"
             x-response-time:
               schema:
                 type: string
-              example: 0.804ms
+              example: 1.804ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -1174,11 +1376,11 @@ paths:
             x-response-time:
               schema:
                 type: string
-              example: 0.606ms
+              example: 0.883ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string
@@ -1192,7 +1394,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: Et et ab.
+                    example: Quo suscipit sit iure aliquid quia.
           headers:
             content-security-policy:
               schema:
@@ -1265,19 +1467,19 @@ paths:
             content-length:
               schema:
                 type: string
-              example: "23"
+              example: "49"
             etag:
               schema:
                 type: string
-              example: W/"17-rE9ZGjV993otjlNBnuUvaqk1uus"
+              example: W/"31-jpALKraUQS7RpVyiCOa3MP8B+7Q"
             x-response-time:
               schema:
                 type: string
-              example: 0.576ms
+              example: 1.573ms
             date:
               schema:
                 type: string
-              example: Fri, 03 Mar 2023 12:18:10 GMT
+              example: Fri, 03 Mar 2023 16:47:33 GMT
             connection:
               schema:
                 type: string

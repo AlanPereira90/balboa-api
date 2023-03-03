@@ -92,4 +92,19 @@ describe('WorkoutService', () => {
       expect(findOne).to.be.calledWith(id);
     });
   });
+
+  describe('remove', () => {
+    it('should delete a workout successfully', async () => {
+      const id = faker.datatype.uuid();
+
+      const repositoryResult = { affectedRows: 1 };
+      const remove = stub().resolves(repositoryResult);
+      const instance = WorkoutServiceBuilder.build({ remove });
+
+      const result = await instance.remove(id);
+
+      expect(result).to.be.deep.equals(repositoryResult);
+      expect(remove).to.be.calledOnceWith(id);
+    });
+  });
 });

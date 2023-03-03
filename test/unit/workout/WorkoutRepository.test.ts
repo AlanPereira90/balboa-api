@@ -160,4 +160,35 @@ describe('WorkoutRepository', () => {
       expect(findOneBy).to.be.calledOnceWith({ id });
     });
   });
+
+  describe('remove', () => {
+    it('should delete a workout successfully', async () => {
+      const id = faker.datatype.uuid();
+
+      const del = stub().resolves({ affected: 1 });
+
+      const instance = WorkoutRepositoryBuilder.build({ delete: del });
+
+      const expectedResult = { affectedRows: 1 };
+
+      const result = await instance.remove(id);
+
+      expect(result).to.be.deep.equal(expectedResult);
+      expect(del).to.be.calledOnceWith({ id });
+    });
+
+    it('should fail when dao fails', async () => {
+      const id = faker.datatype.uuid();
+
+      const message = faker.lorem.sentence();
+
+      const del = stub().rejects(new Error(message));
+      const instance = WorkoutRepositoryBuilder.build({ delete: del });
+
+      const promise = instance.remove(id);
+
+      await expect(promise).to.be.eventually.rejected.with.property('message', message);
+      expect(del).to.be.calledOnceWith({ id });
+    });
+  });
 });

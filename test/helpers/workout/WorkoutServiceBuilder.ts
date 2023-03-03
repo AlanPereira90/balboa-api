@@ -8,7 +8,8 @@ export default class WorkoutServiceBuilder {
     const updateById = stub();
     const list = stub();
     const findOne = stub();
+    const remove = stub();
 
-    return new WorkoutService({ create, updateById, list, findOne, ...repositoryMethods });
+    return new WorkoutService({ create, updateById, list, findOne, remove, ...repositoryMethods });
   }
 }

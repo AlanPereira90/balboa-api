@@ -20,11 +20,10 @@ export class App {
 
     if (!PROD) {
       this.app.use(morgan('dev'));
+      const swaggerDocument = YAML.load('doc/api-reference.yml');
+      this.app.use('/api-docs', swaggerUi.serve);
+      this.app.get('/api-docs', swaggerUi.setup(swaggerDocument));
     }
-
-    const swaggerDocument = YAML.load('doc/api-reference.yml');
-    this.app.use('/api-docs', swaggerUi.serve);
-    this.app.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
     this.app.use(helmet());
     this.app.use(responseTime());

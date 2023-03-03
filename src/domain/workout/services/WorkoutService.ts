@@ -7,12 +7,16 @@ import ResponseError from '../../common/utils/ResponseError';
 import WorkoutEntity from '../entities/WorkoutEntity';
 import { IWorkoutRepository } from '../repositories/interfaces/IWorkoutRepository';
 import { WorkoutDetail } from '../types/workout';
-import { IWorkoutService, UpdateResult } from './interfaces/IWorkoutService';
+import { DataManipulationResult, IWorkoutService } from './interfaces/IWorkoutService';
 
 @scoped(Lifecycle.ResolutionScoped)
 @registry([{ token: 'WorkoutService', useClass: WorkoutService }])
 export default class WorkoutService implements IWorkoutService {
   constructor(@inject('WorkoutRepository') private readonly _repository: IWorkoutRepository) {}
+
+  remove(id: string): Promise<DataManipulationResult> {
+    return this._repository.remove(id);
+  }
 
   async findOne(id: string): Promise<WorkoutEntity> {
     const result = await this._repository.findOne(id);
@@ -28,7 +32,7 @@ export default class WorkoutService implements IWorkoutService {
     return this._repository.list({});
   }
 
-  updateWorkout(id: string, fields: Partial<Omit<WorkoutEntity, 'id'>>): Promise<UpdateResult> {
+  updateWorkout(id: string, fields: Partial<Omit<WorkoutEntity, 'id'>>): Promise<DataManipulationResult> {
     const fieldsWithUpdatedAt = {
       ...fields,
       updatedAt: new Date(),
